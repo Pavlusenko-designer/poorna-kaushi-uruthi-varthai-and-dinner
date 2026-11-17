@@ -18,7 +18,8 @@ export const invitation = {
   closingText: "Bless us and join us for breakfast.",
   dinner: {
     address: "550 Kottur Road, S L Patti, Pollachi",
-    mapQuery: "550 Kottur Road, S L Patti, Pollachi, Tamil Nadu, India",
+    mapQuery:
+      "J2V4+QVR, Alagapuri St, Alagappa Colony, Suleeshwaranpatti, Tamil Nadu 642006, India",
   },
 };
 
