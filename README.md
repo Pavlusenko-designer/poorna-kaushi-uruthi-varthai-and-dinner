@@ -4,6 +4,8 @@ A mobile-first, animated invitation in English and Tamil for **20 November 2026,
 
 [Live invitation](https://poorna-kaushi-uruthi-varthai-and-dinner.netlify.app/) · [Tamil invitation](https://poorna-kaushi-uruthi-varthai-and-dinner.netlify.app/?lang=ta)
 
+[GitHub repository](https://github.com/Pavlusenko-designer/poorna-kaushi-uruthi-varthai-and-dinner)
+
 ## Development
 
 ```sh
@@ -46,3 +48,5 @@ The language switcher remembers the guest's choice. Add `?lang=ta` to open the T
 Run `node scripts/prepare-assets.mjs` when regenerating portraits, the sharing image, and English fonts. Run `node scripts/prepare-tamil-fonts.mjs` to regenerate Tamil fonts. These scripts need internet access to fetch fonts; ordinary builds use the included local assets.
 
 The production URL, canonical link, and absolute messenger preview URL are set in `index.html`.
+
+The dinner sharing card uses an indigo and peacock-teal palette with a kolam motif and antique-gold accents. Regenerate it independently with `node scripts/prepare-social-preview.mjs`. The website retains the original light theme and animations. The Netlify branding badge is disabled for this project.
