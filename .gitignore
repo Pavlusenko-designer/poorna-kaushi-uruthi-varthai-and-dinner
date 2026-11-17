@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.netlify/
+.DS_Store
+artifacts/
+.env
+.env.*
+!.env.example
+*.log
+
+# Earlier portraits are kept locally; current source portraits end in -c.png.
+Kaushi.png
+Poorna.png
+Kaushi-cutout.png

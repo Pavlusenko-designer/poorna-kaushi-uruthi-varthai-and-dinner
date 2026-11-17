@@ -1,0 +1,454 @@
+/* One pinned stage: the same portraits enter once and stay through the story. */
+.opening {
+  position: relative;
+  height: 175svh;
+}
+.opening-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 50% 60%, #f7efd9 0, transparent 57%);
+}
+.toran {
+  position: absolute;
+  top: -15px;
+  left: 15%;
+  width: 70%;
+  height: 105px;
+  opacity: 0.9;
+  pointer-events: none;
+  transform-origin: top center;
+  animation: toran-sway 8s ease-in-out infinite alternate;
+}
+.opening-copy,
+.opening-narrative {
+  position: absolute;
+  top: clamp(110px, 14svh, 175px);
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  z-index: 4;
+  will-change: transform, opacity;
+}
+.ceremony-label {
+  font-size: 16px;
+  letter-spacing: 0.6px;
+  margin-bottom: 12px;
+  color: #7b8068;
+}
+.opening h1 {
+  font-size: clamp(70px, 7.5vw, 114px);
+  line-height: 1.07;
+  letter-spacing: -4px;
+}
+.ampersand {
+  font-size: 0.7em;
+  font-style: italic;
+  color: var(--gold);
+  margin: 0 9px;
+}
+.hero-ceremony {
+  font-size: 19px;
+  margin-top: 16px;
+  letter-spacing: 2px;
+  color: #7d7255;
+}
+.opening-narrative {
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+}
+.opening-narrative h2 {
+  font-size: clamp(38px, 4.3vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -1.3px;
+  max-width: 850px;
+  margin: auto;
+}
+.opening-narrative p {
+  font-size: 17px;
+  color: #767d68;
+  margin-top: 18px;
+}
+.opening-art {
+  position: absolute;
+  width: min(950px, 96vw);
+  left: 50%;
+  top: max(36%, var(--story-safe-top, 280px));
+  bottom: 112px;
+  transform: translateX(-50%);
+}
+.watercolor-arch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+  bottom: 0;
+  width: 60%;
+  border-radius: 50% 50% 5% 5% / 47% 47% 5% 5%;
+  background: radial-gradient(
+    ellipse at 48% 42%,
+    #efdfb8a8,
+    #e7d8b348 66%,
+    transparent 73%
+  );
+  border: 1px solid #c7b17e42;
+  box-shadow:
+    0 0 28px 15px #e5d1a219,
+    inset 0 0 40px #d5ba791c;
+  opacity: 0.8;
+}
+.arch-inner {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid #c4a77436;
+  border-radius: inherit;
+}
+.arch-sun {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f1d9a16b, transparent 70%);
+}
+.opening-kolam {
+  position: absolute;
+  width: min(350px, 80%);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  color: #a7864336;
+}
+.portrait {
+  position: absolute;
+  bottom: 4px;
+  width: 44%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+.portrait-bride {
+  right: 49%;
+  height: 89%;
+  transform: translate3d(-60vw, 42px, 0) rotate(-7deg);
+}
+.portrait-groom {
+  left: 49%;
+  transform: translate3d(60vw, 42px, 0) rotate(7deg);
+}
+.banana {
+  position: absolute;
+  width: 24%;
+  height: 80%;
+  bottom: 0;
+  z-index: 1;
+  transform-origin: center bottom;
+  opacity: 0.7;
+}
+.banana-left {
+  left: 0;
+  transform: rotate(-14deg);
+  animation: leaf-left 10s ease-in-out infinite alternate;
+}
+.banana-right {
+  right: 0;
+  transform: scaleX(-1) rotate(-14deg);
+  animation: leaf-right 11s ease-in-out infinite alternate;
+}
+.ground-wash {
+  position: absolute;
+  left: 10%;
+  bottom: 0;
+  width: 80%;
+  height: 45px;
+  background: radial-gradient(ellipse, #acba8c40, transparent 70%);
+  z-index: 1;
+}
+.garden-flower {
+  position: absolute;
+  z-index: 5;
+  color: #d6b66e;
+  width: 58px;
+  height: 58px;
+  bottom: 0;
+}
+.garden-flower-one {
+  left: 15%;
+  transform: rotate(12deg);
+}
+.garden-flower-two {
+  right: 16%;
+  width: 45px;
+  height: 45px;
+  color: #a8b58a;
+}
+.opening-bottom {
+  position: absolute;
+  bottom: 24px;
+  left: 6%;
+  right: 6%;
+  min-height: 65px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 6;
+}
+
+.hero-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hero-date > span:first-child {
+  font-family: var(--serif);
+  font-size: 34px;
+  letter-spacing: 1px;
+}
+.hero-date > span:last-child {
+  font-size: 15px;
+  color: #797c69;
+  margin-top: 3px;
+}
+@keyframes leaf-left {
+  to {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes leaf-right {
+  to {
+    transform: scaleX(-1) rotate(-10deg);
+  }
+}
+@keyframes toran-sway {
+  to {
+    transform: rotate(0.5deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .opening h1 {
+    font-size: 82px;
+  }
+  .opening-copy,
+  .opening-narrative {
+    top: 125px;
+  }
+  .opening-art {
+    top: max(37%, var(--story-safe-top, 280px));
+  }
+  .portrait {
+    width: 49%;
+  }
+  .portrait-bride {
+    right: 48%;
+  }
+  .portrait-groom {
+    left: 48%;
+  }
+  .banana {
+    width: 25%;
+  }
+}
+@media (max-width: 600px) {
+  .toran {
+    top: 0;
+    left: -12%;
+    width: 124%;
+    height: 75px;
+  }
+  .toran svg {
+    width: 100%;
+    height: auto;
+  }
+  .opening {
+    height: 175svh;
+  }
+  .opening-copy,
+  .opening-narrative {
+    top: 90px;
+    left: 18px;
+    right: 18px;
+  }
+  .ceremony-label {
+    font-size: 14px;
+    margin-bottom: 14px;
+    letter-spacing: 0;
+  }
+  .opening h1 {
+    font-size: clamp(46px, 12.4vw, 74px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    white-space: nowrap;
+  }
+  .ampersand {
+    margin: 0 2px;
+  }
+  .hero-ceremony {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    margin-top: 18px;
+  }
+  .opening-narrative h2 {
+    font-size: clamp(31px, 8.4vw, 46px);
+    letter-spacing: -0.7px;
+    line-height: 1.06;
+    max-width: 470px;
+  }
+  .opening-narrative p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 14px;
+  }
+  .opening-art {
+    top: max(250px, 34%, var(--story-safe-top, 280px));
+    bottom: 143px;
+    width: 100%;
+  }
+  .watercolor-arch {
+    width: 82%;
+    border-radius: 50% 50% 5% 5% / 40% 40% 5% 5%;
+  }
+  .arch-sun {
+    width: 120px;
+    height: 120px;
+    top: 20px;
+  }
+  .opening-kolam {
+    width: 265px;
+  }
+  .portrait {
+    width: 57%;
+  }
+  .portrait-bride {
+    right: 49%;
+    width: 51%;
+  }
+  .portrait-groom {
+    left: 48%;
+  }
+  .banana {
+    height: 75%;
+    width: 31%;
+  }
+  .banana-left {
+    left: -11%;
+  }
+  .banana-right {
+    right: -12%;
+  }
+  .garden-flower-one {
+    width: 40px;
+    height: 40px;
+    left: 6%;
+  }
+  .garden-flower-two {
+    width: 30px;
+    height: 30px;
+    right: 8%;
+  }
+  .ground-wash {
+    width: 100%;
+    left: 0;
+    height: 35px;
+  }
+  .opening-bottom {
+    left: 23px;
+    right: 23px;
+    bottom: 80px;
+    min-height: 48px;
+    gap: 12px;
+  }
+
+  .hero-date > span:first-child {
+    font-size: 28px;
+    letter-spacing: 0;
+  }
+  .hero-date > span:last-child {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 370px) {
+  .opening-copy,
+  .opening-narrative {
+    top: 90px;
+    left: 14px;
+    right: 14px;
+  }
+  .opening h1 {
+    font-size: 43px;
+  }
+  .opening-narrative h2 {
+    font-size: 30px;
+  }
+  .opening-narrative p {
+    font-size: 14px;
+  }
+  .opening-art {
+    top: max(250px, 34%, var(--story-safe-top, 280px));
+    bottom: 137px;
+  }
+  .opening-bottom {
+    left: 17px;
+    right: 17px;
+  }
+
+  .hero-date > span:first-child {
+    font-size: 25px;
+  }
+  .hero-date > span:last-child {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening {
+    height: auto;
+  }
+  .opening-stage {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding: 140px 20px 25px;
+  }
+  .opening-copy,
+  .opening-narrative {
+    position: relative;
+    inset: auto;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .opening-narrative {
+    margin: 42px 0 24px;
+  }
+  .opening-art {
+    position: relative;
+    inset: auto;
+    width: min(750px, 100%);
+    height: clamp(280px, 55vw, 470px);
+    margin: auto;
+    transform: none;
+  }
+  .portrait {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .opening-bottom {
+    position: relative;
+    inset: auto;
+    margin: 20px 3px 0;
+  }
+}

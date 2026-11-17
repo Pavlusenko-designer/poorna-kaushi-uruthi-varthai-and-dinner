@@ -1,0 +1,284 @@
+@font-face {
+  font-family: Cormorant;
+  src: url("/fonts/cormorant-garamond.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Karla;
+  src: url("/fonts/karla.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+:root {
+  font-family: Karla, Arial, sans-serif;
+  color: #3d4b39;
+  background: #fbf8ef;
+  font-synthesis: none;
+  --paper: #fbf8ef;
+  --green: #536548;
+  --ink: #3d4b39;
+  --gold: #ad8742;
+  --light-gold: #dfc78f;
+  --pink: #ead8cd;
+  --serif: Cormorant, Georgia, serif;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.84' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23765d38' filter='url(%23n)' opacity='.65' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 6px;
+}
+svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+button {
+  color: inherit;
+}
+::selection {
+  background: #e7d5ad;
+  color: #33452d;
+}
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  padding: 14px;
+  z-index: 100;
+  background: var(--green);
+  color: white;
+}
+.skip-link:focus {
+  top: 12px;
+}
+.reading-progress {
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+}
+.reading-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.invitation-section {
+  position: relative;
+  padding: 64px 24px 48px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 0 40%, #ebe2bf4d, transparent 40%),
+    radial-gradient(ellipse at 100% 70%, #e9d0be42, transparent 40%);
+}
+.invitation-paper {
+  position: relative;
+  max-width: 780px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 65px 36px;
+  background: #fffdf7;
+  border: 1px solid #cdb78280;
+  box-shadow: 0 9px 45px #765a3310;
+  opacity: 0.25;
+  transition: opacity 1.1s;
+}
+.invitation-paper::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px solid #cdb78255;
+  pointer-events: none;
+}
+.invitation-paper.is-visible {
+  opacity: 1;
+}
+.invitation-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.invitation-top > svg {
+  width: 25px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.invitation-top p {
+  font-size: 16px;
+  color: #7b7c67;
+  line-height: 1.6;
+}
+.invitation-paper h2 {
+  font-size: clamp(49px, 6vw, 82px);
+  line-height: 1.1;
+  margin: 12px 0 20px;
+  letter-spacing: -2px;
+  color: var(--green);
+}
+.invite-sentence {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.formal-names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 28px 0;
+  color: #4d5841;
+  font-family: var(--serif);
+}
+.formal-names p {
+  font-size: 39px;
+  line-height: 1.1;
+}
+.formal-names > span {
+  font-size: 34px;
+  font-style: italic;
+  color: var(--gold);
+  margin: 12px 0;
+}
+.date-panel {
+  margin: 22px auto;
+  padding: 18px 25px;
+  max-width: 360px;
+  border-top: 1px solid #bcaa783e;
+  border-bottom: 1px solid #bcaa783e;
+}
+.date-heading {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  font-size: 16px;
+  color: #767a61;
+}
+.date-heading span + span {
+  padding-left: 17px;
+  border-left: 1px solid #bda87580;
+}
+.big-date {
+  font-family: var(--serif);
+  font-size: 118px;
+  line-height: 1;
+  color: var(--green);
+  margin: 1px 0 0;
+  letter-spacing: -8px;
+}
+.big-date > span {
+  font-size: 26px;
+  letter-spacing: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin: 26px 0 0 7px;
+  font-style: italic;
+}
+.ceremony-time {
+  font-family: var(--serif);
+  font-size: 45px;
+  color: #4c5d3d;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.ceremony-time > span {
+  font-family: Karla, sans-serif;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 13px 22px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 2px;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.button > svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.invitation-flower {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.18;
+  color: #b2b77c;
+}
+.flower-left {
+  left: -65px;
+  top: 30%;
+  transform: rotate(20deg);
+}
+.flower-right {
+  right: -60px;
+  bottom: 10%;
+  color: #c5a568;
+  transform: rotate(-15deg);
+}

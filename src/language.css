@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "Tamil Serif";
+  src: url("/fonts/noto-serif-tamil.woff2") format("woff2");
+  font-weight: 400 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tamil Sans";
+  src: url("/fonts/noto-sans-tamil.woff2") format("woff2");
+  font-weight: 400 500;
+  font-display: swap;
+}
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 40;
+  display: flex;
+  padding: 3px;
+  gap: 3px;
+  background: #fbf8eff5;
+  border: 1px solid #b5b58b80;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px #5365480a;
+}
+.language-switcher button {
+  font-family: Karla, Arial, sans-serif;
+  font-size: 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  padding: 8px 12px;
+  min-height: 40px;
+  min-width: 65px;
+}
+.language-switcher button[lang="ta"] {
+  font-family: "Tamil Sans", sans-serif;
+}
+.language-switcher button[aria-pressed="true"] {
+  background: var(--green);
+  color: #fffdf4;
+}
+html[lang="ta"] {
+  font-family: "Tamil Sans", Karla, sans-serif;
+  --serif: "Tamil Serif", Georgia, serif;
+}
+html[lang="ta"] h1,
+html[lang="ta"] h2,
+html[lang="ta"] .formal-names {
+  letter-spacing: 0;
+}
+html[lang="ta"] .opening h1 {
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: 1.6;
+}
+html[lang="ta"] .ampersand {
+  font-family: Cormorant, Georgia, serif;
+}
+html[lang="ta"] .ceremony-label {
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+html[lang="ta"] .hero-ceremony {
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+html[lang="ta"] .opening-narrative h2 {
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.6;
+}
+html[lang="ta"] .opening-narrative p {
+  line-height: 1.8;
+}
+html[lang="ta"] .opening-art {
+  top: max(40%, var(--story-safe-top, 350px));
+}
+html[lang="ta"] .invitation-paper h2 {
+  font-size: clamp(32px, 4vw, 51px);
+  line-height: 1.65;
+}
+html[lang="ta"] .formal-names p {
+  font-size: 30px;
+  line-height: 1.8;
+}
+html[lang="ta"] .formal-names > span {
+  font-family: Cormorant, Georgia, serif;
+}
+html[lang="ta"] .invite-sentence {
+  line-height: 1.9;
+}
+html[lang="ta"] .big-date,
+html[lang="ta"] .ceremony-time,
+html[lang="ta"] .hero-date > span:first-child {
+  font-family: Cormorant, Georgia, serif;
+}
+html[lang="ta"] .ceremony-time > span {
+  font-family: "Tamil Sans", Karla, sans-serif;
+}
+html[lang="ta"] .date-heading {
+  line-height: 1.8;
+}
+html[lang="ta"] .venue-copy h2 {
+  font-size: clamp(30px, 3.8vw, 44px);
+  line-height: 1.7;
+}
+html[lang="ta"] .venue-copy address {
+  line-height: 1.9;
+}
+html[lang="ta"] .venue-closing,
+html[lang="ta"] .closing-names {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1.8;
+}
+html[lang="ta"] .button {
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .language-switcher {
+    top: 47px;
+    right: 16px;
+  }
+  .language-switcher button {
+    font-size: 13px;
+    min-height: 38px;
+    min-width: 62px;
+    padding: 7px 10px;
+  }
+  .opening-copy,
+  .opening-narrative {
+    top: 124px;
+  }
+  html[lang="ta"] .opening h1 {
+    font-size: clamp(28px, 7.5vw, 39px);
+    white-space: normal;
+  }
+  html[lang="ta"] .ceremony-label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  html[lang="ta"] .hero-ceremony {
+    font-size: 18px;
+    margin-top: 6px;
+  }
+  html[lang="ta"] .opening-narrative h2 {
+    font-size: clamp(23px, 6.1vw, 31px);
+    line-height: 1.6;
+  }
+  html[lang="ta"] .opening-narrative p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  html[lang="ta"] .opening-art {
+    top: max(320px, 38%, var(--story-safe-top, 350px));
+  }
+  html[lang="ta"] .hero-date > span:last-child {
+    font-size: 12px;
+    white-space: normal;
+    line-height: 1.7;
+  }
+  html[lang="ta"] .invitation-top {
+    gap: 10px;
+  }
+  html[lang="ta"] .invitation-top p {
+    font-size: 15px;
+  }
+  html[lang="ta"] .invitation-paper h2 {
+    font-size: clamp(28px, 7.7vw, 38px);
+    margin: 20px -8px;
+  }
+  html[lang="ta"] .formal-names p {
+    font-size: 24px;
+  }
+  html[lang="ta"] .date-heading {
+    font-size: 14px;
+    gap: 10px;
+  }
+  html[lang="ta"] .date-heading span + span {
+    padding-left: 10px;
+  }
+  html[lang="ta"] .ceremony-time {
+    font-size: 37px;
+    white-space: nowrap;
+  }
+  html[lang="ta"] .ceremony-time > span {
+    font-size: 15px;
+  }
+  html[lang="ta"] .venue-copy h2 {
+    font-size: 29px;
+  }
+  html[lang="ta"] .venue-closing,
+  html[lang="ta"] .closing-names {
+    font-size: 21px;
+  }
+  html[lang="ta"] .mobile-dock a + a {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  html[lang="ta"] .mobile-dock strong {
+    font-family: "Tamil Sans", sans-serif;
+    font-size: 13px;
+  }
+  html[lang="ta"] .mobile-dock small {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 370px) {
+  html[lang="ta"] .formal-names p {
+    font-size: 22px;
+  }
+  html[lang="ta"] .ceremony-time {
+    font-size: 34px;
+  }
+  html[lang="ta"] .mobile-dock a + a {
+    font-size: 11px;
+  }
+  html[lang="ta"] .mobile-dock a {
+    gap: 6px;
+  }
+  html[lang="ta"] .mobile-dock strong {
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .opening-copy,
+  .opening-narrative {
+    top: auto;
+  }
+  html[lang="ta"] .opening-art {
+    top: auto;
+  }
+}
