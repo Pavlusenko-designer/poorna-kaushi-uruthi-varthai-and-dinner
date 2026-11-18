@@ -5,7 +5,7 @@ await mkdir("public/fonts", { recursive: true });
 await mkdir("public/images", { recursive: true });
 for (const [source, name] of [
   ["Kaushi-c.png", "kaushi"],
-  ["Poorna-c.png", "poorna"],
+  ["Poorna-garland.png", "poorna"],
 ]) {
   await sharp(source)
     .resize(860)

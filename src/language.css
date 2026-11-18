@@ -192,18 +192,6 @@ html[lang="ta"] .button {
   html[lang="ta"] .closing-names {
     font-size: 21px;
   }
-  html[lang="ta"] .mobile-dock a + a {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-  html[lang="ta"] .mobile-dock strong {
-    font-family: "Tamil Sans", sans-serif;
-    font-size: 13px;
-  }
-  html[lang="ta"] .mobile-dock small {
-    font-size: 11px;
-    line-height: 1.5;
-  }
 }
 @media (max-width: 370px) {
   html[lang="ta"] .formal-names p {
@@ -211,15 +199,6 @@ html[lang="ta"] .button {
   }
   html[lang="ta"] .ceremony-time {
     font-size: 34px;
-  }
-  html[lang="ta"] .mobile-dock a + a {
-    font-size: 11px;
-  }
-  html[lang="ta"] .mobile-dock a {
-    gap: 6px;
-  }
-  html[lang="ta"] .mobile-dock strong {
-    font-size: 12px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

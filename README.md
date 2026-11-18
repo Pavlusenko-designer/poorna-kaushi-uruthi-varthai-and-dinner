@@ -37,7 +37,7 @@ Pushes to `main` trigger Netlify builds and production deployments through the r
 - English and Tamil text: `src/translations.js`
 - Page structure and scroll animation: `src/main.js`
 - Styles: `src/style.css`, `src/opening.css`, `src/venue.css`, `src/responsive.css`, and `src/language.css`
-- Current source portraits: `Poorna-c.png` and `Kaushi-c.png`
+- Current source portraits: `Poorna-garland.png` and `Kaushi-c.png`
 - Optimized portraits and messenger preview: `public/images/`
 - Bundled typefaces and licenses: `public/fonts/`
 
@@ -50,3 +50,5 @@ Run `node scripts/prepare-assets.mjs` when regenerating portraits, the sharing i
 The production URL, canonical link, and absolute messenger preview URL are set in `index.html`.
 
 The dinner sharing card uses an indigo and peacock-teal palette with a kolam motif and antique-gold accents. Regenerate it independently with `node scripts/prepare-social-preview.mjs`. The website retains the original light theme and animations. The Netlify branding badge is disabled for this project.
+
+The YouTube live-stream URL is configured as `liveStreamUrl` in `src/content.js`. Mobile and touch layouts keep date, venue, and the YouTube link pinned at the bottom; the invitation also includes a prominent live-stream link in English and Tamil. Shared styling is in `src/livestream.css`.

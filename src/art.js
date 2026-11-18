@@ -17,6 +17,8 @@ export const toran = `<svg viewBox="0 0 1200 130" preserveAspectRatio="xMidYMin 
 export const lamp = `<svg viewBox="0 0 100 160" fill="none" aria-hidden="true"><path d="M50 9C24 35 36 48 50 47C65 47 72 31 50 9Z" fill="#d7ac55"/><path d="M50 23C42 35 43 41 50 41C58 41 59 34 50 23Z" fill="#f7e9b4"/><path d="M19 53Q50 85 81 53Z" fill="#b58f45"/><path d="M50 66V134M44 77H56M44 124H56" stroke="#b58f45" stroke-width="5"/><path d="M50 128L28 148H72L50 128Z" fill="#b58f45"/><path d="M21 150H79" stroke="#b58f45" stroke-width="4"/></svg>`;
 
 export const icons = {
+  youtube:
+    '<svg viewBox="0 0 32 24" fill="none" aria-hidden="true"><rect x="1" y="1" width="30" height="22" rx="6" fill="#ba352e"/><path d="M13 7L22 12L13 17V7Z" fill="#fffdf7"/></svg>',
   arrow:
     '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   calendar:

@@ -3,6 +3,7 @@ import "./opening.css";
 import "./venue.css";
 import "./responsive.css";
 import "./language.css";
+import "./livestream.css";
 import { translations, getInitialLanguage } from "./translations.js";
 import {
   invitation as data,
@@ -36,7 +37,7 @@ document.querySelector("#app").innerHTML = `
           <div class="watercolor-arch"><div class="arch-inner"></div><div class="arch-sun"></div></div>
           <div class="opening-kolam">${kolam}</div>
           <div class="banana banana-left">${banana}</div><div class="banana banana-right">${banana}</div>
-          <div class="portrait portrait-bride"><img src="/images/poorna.webp" width="860" height="1290" data-i18n-alt="brideAlt" alt="Little Poorna in an ivory and vermilion silk saree with jasmine in her hair" fetchpriority="high" /></div>
+          <div class="portrait portrait-bride"><img src="/images/poorna.webp" width="860" height="1290" data-i18n-alt="brideAlt" alt="Little Poorna in an ivory and vermilion silk saree with a jasmine-and-rose garland and jasmine in her hair" fetchpriority="high" /></div>
           <div class="portrait portrait-groom"><img src="/images/kaushi.webp" width="860" height="1290" data-i18n-alt="groomAlt" alt="Little Kaushi in a traditional ivory veshti and jasmine garland" fetchpriority="high" /></div>
           <div class="ground-wash"></div>
           <div class="garden-flower garden-flower-one">${flower}</div><div class="garden-flower garden-flower-two">${flower}</div>
@@ -53,6 +54,12 @@ document.querySelector("#app").innerHTML = `
         <p class="invite-sentence" data-i18n="invite">${data.invitationText}</p>
         <div class="formal-names"><p data-i18n="bride">${data.bride.fullName.split(" ")[0]}<br />${data.bride.fullName.split(" ").slice(1).join(" ")}</p><span>&</span><p data-i18n="groom">${data.groom.fullName.split(" ").slice(0, -1).join(" ")}<br />${data.groom.fullName.split(" ").at(-1)}</p></div>
         <div class="date-panel"><div class="date-heading"><span data-i18n="friday">Friday</span><span data-i18n="month">November 2026</span></div><div class="big-date" data-i18n="day">20<span>th</span></div><p class="ceremony-time" data-i18n="time">7:00–9:00 <span>AM IST</span></p></div>
+        <div class="live-invitation">
+          <p data-i18n="liveIntro">Join us wherever you are.</p>
+          <a class="youtube-link" href="${data.liveStreamUrl}" target="_blank" rel="noopener noreferrer" data-i18n-aria="liveAria" aria-label="Watch the ceremony live on YouTube (opens in a new tab)">
+            ${icons.youtube}<span><strong data-i18n="liveAction">Watch the ceremony live</strong><small data-i18n="livePlatform">on YouTube</small></span>${icons.arrow}
+          </a>
+        </div>
 
       </div>
     </section>
@@ -80,7 +87,11 @@ document.querySelector("#app").innerHTML = `
       </div>
     </section>
   </main>
-  <nav class="mobile-dock" data-i18n-aria="quickLinks" aria-label="Event quick links"><a href="#invitation">${icons.calendar}<span><strong data-i18n="dockDate">20 November</strong><small data-i18n="dockTime">7–9 AM IST</small></span></a><a href="#venue">${icons.pin}<span data-i18n="dockVenue">${data.venue.replace(" Arunya Hall", "<br />Arunya Hall")}</span></a></nav>
+  <nav class="mobile-dock" data-i18n-aria="quickLinks" aria-label="Event quick links">
+    <a class="dock-date" href="#invitation">${icons.calendar}<span><strong data-i18n="dockDateShort">20 Nov</strong><small data-i18n="dockTime">7–9 AM IST</small></span></a>
+    <a class="dock-venue" href="#venue">${icons.pin}<span data-i18n="dockVenue">${data.venue.replace(" Arunya Hall", "<br />Arunya Hall")}</span></a>
+    <a class="dock-live" href="${data.liveStreamUrl}" target="_blank" rel="noopener noreferrer" data-i18n-aria="liveAria" aria-label="Watch the ceremony live on YouTube (opens in a new tab)">${icons.youtube}<span><strong data-i18n="dockLive">Watch live</strong><small>YouTube</small></span></a>
+  </nav>
 `;
 
 const jsonLd = document.createElement("script");
@@ -117,6 +128,7 @@ const bride = document.querySelector(".portrait-bride");
 const groom = document.querySelector(".portrait-groom");
 const openingKolam = document.querySelector(".opening-kolam");
 const progressBar = document.querySelector(".reading-progress span");
+const mobileDock = document.querySelector(".mobile-dock");
 let scheduled = false;
 let storyTop = 0;
 let storyDistance = 1;
@@ -124,6 +136,10 @@ let pageDistance = 1;
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 
 function measure() {
+  document.documentElement.style.setProperty(
+    "--mobile-dock-height",
+    `${mobileDock.offsetHeight}px`,
+  );
   // Reserve space for wrapped text and its entrance movement in either language.
   stage.style.setProperty(
     "--story-safe-top",
@@ -184,6 +200,7 @@ document.fonts.ready.then(measure);
 const openingResizeObserver = new ResizeObserver(measure);
 openingResizeObserver.observe(narrative);
 openingResizeObserver.observe(stage);
+openingResizeObserver.observe(mobileDock, { box: "border-box" });
 reducedMotion.addEventListener("change", () => {
   measure();
 });

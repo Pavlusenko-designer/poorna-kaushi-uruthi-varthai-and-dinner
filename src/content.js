@@ -16,6 +16,7 @@ export const invitation = {
   coordinates: { latitude: 11.04085, longitude: 77.04179 },
   invitationText: "You and your family are cordially invited.",
   closingText: "Bless us and join us for breakfast.",
+  liveStreamUrl: "https://youtube.com/live/x_zq9tMh1gA?feature=share",
   dinner: {
     address: "550 Kottur Road, S L Patti, Pollachi",
     mapQuery:

@@ -1,0 +1,189 @@
+:root {
+  --mobile-dock-height: 84px;
+}
+.live-invitation {
+  margin: 26px auto 0;
+}
+.live-invitation > p {
+  margin-bottom: 13px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #7b7c67;
+}
+.youtube-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 100%;
+  min-height: 78px;
+  padding: 16px 24px;
+  border: 1px solid #b6766475;
+  border-radius: 3px;
+  background: #fff7ef;
+  color: #783b31;
+  text-align: left;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.youtube-link:hover {
+  background: #f6e8dc;
+  border-color: #a65743;
+}
+.youtube-link > svg:first-child {
+  width: 42px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.youtube-link > svg:last-child {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.youtube-link > span {
+  min-width: 0;
+}
+.youtube-link strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+}
+.youtube-link small {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+html[lang="ta"] .youtube-link strong {
+  font-size: 16px;
+  line-height: 1.8;
+}
+@media (max-width: 600px), (pointer: coarse) {
+  html {
+    scroll-padding-bottom: calc(var(--mobile-dock-height) + 16px);
+  }
+  .live-invitation {
+    margin-top: 24px;
+  }
+  .youtube-link {
+    width: 100%;
+    gap: 11px;
+    padding: 15px 13px;
+  }
+  .youtube-link strong {
+    font-size: 16px;
+  }
+  .youtube-link > svg:first-child {
+    width: 34px;
+    height: 27px;
+  }
+  .youtube-link > svg:last-child {
+    width: 17px;
+    height: 17px;
+  }
+  html[lang="ta"] .youtube-link strong {
+    font-size: 15px;
+  }
+  .venue-section {
+    padding-bottom: calc(var(--mobile-dock-height) + 32px);
+  }
+  .mobile-dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-columns: 0.9fr 1.25fr 1fr;
+    align-items: stretch;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    border-top: 1px solid #b5b58b59;
+    background: #fbf8effa;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 -3px 20px #666c4010;
+  }
+  .mobile-dock a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+    min-height: 72px;
+    padding: 4px 3px;
+    font-size: 13px;
+    line-height: 1.3;
+    text-align: center;
+  }
+  .mobile-dock a + a {
+    border-left: 1px solid #b5b58b59;
+  }
+  .mobile-dock a > svg {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    color: var(--green);
+  }
+  .mobile-dock strong {
+    display: block;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 500;
+  }
+  .mobile-dock small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+  .mobile-dock .dock-venue {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .mobile-dock .dock-live {
+    color: #963c30;
+    background: #b9362e09;
+    border-radius: 3px;
+  }
+  .mobile-dock .dock-live > svg {
+    width: 25px;
+  }
+  .mobile-dock .dock-live strong {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  html[lang="ta"] .mobile-dock .dock-date strong {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  html[lang="ta"] .mobile-dock .dock-date small {
+    font-size: 10px;
+  }
+  html[lang="ta"] .mobile-dock .dock-venue {
+    font-size: 11px;
+    line-height: 1.6;
+  }
+  html[lang="ta"] .mobile-dock .dock-live strong {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+@media (max-width: 600px) and (prefers-reduced-motion: no-preference),
+  (pointer: coarse) and (prefers-reduced-motion: no-preference) {
+  .opening-bottom {
+    bottom: calc(var(--mobile-dock-height) + 12px);
+  }
+  .opening-art {
+    bottom: calc(var(--mobile-dock-height) + 78px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .youtube-link {
+    transition: none;
+  }
+}
